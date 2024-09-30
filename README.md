@@ -13,4 +13,4 @@ A subscription groups together user accounts and the resources that have been cr
 ## Management groups:
 These groups help you manage access, policy, and compliance for multiple subscriptions. All subscriptions in a management group management group. automatically inherit the conditions applied to the management Group.
 
-<img src="./images/resources_group.png" width=40% height=70%/>
+<img src="./images/resources_group.png" width=40% height=40%/>

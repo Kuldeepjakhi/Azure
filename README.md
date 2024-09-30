@@ -1,6 +1,3 @@
-# AZURE
-
-
 ## Resources: 
 Resources are instances of services that you create, like virtual machines, storage, or SQL databases.   
 

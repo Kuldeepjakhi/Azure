@@ -13,7 +13,7 @@ These groups help you manage access, policy, and compliance for multiple subscri
 <img src="./images/resources_group.png" width=40% height=40%/>   
 
 
-# Resource Groups  
+## Resource Groups  
 `Resources:` are anything you create in an Azure subscription like VMs, Azure Application Gateway instances, and Azure Cosmos DB instances.   
 * Resource group is a logical container which help manage and organize your Azure resources.   
 For example imilar usage, type, or location   
@@ -30,7 +30,7 @@ For example imilar usage, type, or location
 
 
  
-# AZURE RESOURCE MANAGER(ARM)
+## AZURE RESOURCE MANAGER(ARM)
 
 Azure Resource Manager is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure account.   
 When you send a request through any of the Azure APIs, tools, or SDKs, Resource Manager receives the request. It authenticates and authorizes the request before forwarding it to the appropriate Azure service.      
@@ -46,4 +46,34 @@ When you send a request through any of the Azure APIs, tools, or SDKs, Resource 
 
 <img src="./images/rg_template.png" width=60% height=60%/>
 
+
+## Subscriptions
+* Using Azure requires an Azure subscription.   
+* An Azure subscription is a logical unit of Azure services that links to an Azure account. It also allows you to provision resources.   
+* A subscription provides you with authenticated and authorized access to Azure products and services.   
+* Azure generates separate billing reports and invoices for each subscription.     
+* Two types of subscription boundaries.   
+   * Billing boundary.  
+   * Access control boundary.  
+* You can create separate subscription based on:   
+   * Environment: development and testing, security, or to isolate data for compliance reasons.    
+   * Organizational structures: IT, HR, Admin and so on.  
+
+* Billing: manage and track costs based on your needs, for example - Production, Test and Dev.  
+
+* Different types of Subscription:
+	* FREE: An email address and a credit card are required to sign up for a free trial subscription that provides $200 credit for the first 30 days and 12 months of restricted access.   
+	* Pay-Per-Use: Charges monthly based on Cloud resource use.   
+	* Enterprise: A single Enterprise agreement is established for large subscription purchases, including savings for new licenses and Software Assurance.   
+	* Student: This membership includes $100 for 12 months and may be activated without a credit card.   
+
+
+## Management Groups:
+
+* Management groups let you organize multiple subscriptions as a single management entity to facilitate easier management.   
+* You can create managements groups in a hierarchical structure with the top level of the hierarchy at the tenant level and containing all subscriptions in that tenant.   
+* Any conditions applied to a management group apply to all subscriptions contained in that management group object.   
+* Each management group and subscription can support only one parent.  
+* Each management group can have many children.  
+* The root management group can't be moved or deleted, unlike other management groups.  
 

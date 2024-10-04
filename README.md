@@ -84,12 +84,12 @@ When you send a request through any of the Azure APIs, tools, or SDKs, Resource 
 Active Directory (AD): Active Directory is a database and a set of services connecting users with the network resources required by them to get their work done. The database (or directory) has critical information related to your IT environment, including what users and computers there are and who’s allowed to do what. The services control most of the activity going on in your IT environment so basically, Windows AD provides authentication and authorization to applications, file services, and other resources in a netwo
 
 ## Microsoft Entra ID (Azure Active Directory):
-*Microsoft Entra ID*: If we want to manage access to the Azure Cloud application and associated resources then we need Microsoft Entra ID. This helps your employees to access external resources, such as Azure services, Azure portal, And other applications.   
+**Microsoft Entra ID**: If we want to manage access to the Azure Cloud application and associated resources then we need Microsoft Entra ID. This helps your employees to access external resources, such as Azure services, Azure portal, And other applications.   
 
 * Helps your employees sign in and access resources.  
 * User information such as name, Id, email, password and address is stored in Azure AD by organizations.   
-* *Identity*: user or applications (require authentication via secret keys or certificates).  
-*Account*: Identity with data associated. 
+* **Identity**: user or applications (require authentication via secret keys or certificates).  
+**Account**: Identity with data associated. 
 * Every day, Azure AD manages over 1.2 billion identities, according to Microsoft.   
 * *Tenant*  
 	* Represents an organization.   
@@ -107,17 +107,17 @@ Azure Entra ID works on a licensing model. You can access Azure Entra ID with th
 	* Azure Entra ID Premium Licenses. 
 
 ### Features of Azure Entra ID
-*Application Management*:  It Manages your cloud and on-premises apps using services like Application Proxy, the My Apps portal, single sign-on, and Software as a Service (SaaS) apps.  
-*Authentication*: Users can manage Azure Entra ID self-service password reset feature, Multi-Factor Authentication, custom banned password list, and smart lockout.  
-*Azure Active Directory for developers*: It builds apps that can sign in all the Microsoft identities, and fetch tokens to call Microsoft Graph, and other Microsoft or custom APIs.  
-*Business-to-Business*: You can manage your guest users and external partners while also maintaining control over your own corporate data at the same time.
-Business-to-Customer (B2C): With Azure Entra ID users can customize and control how others sign up, sign in, and manage their profiles when using their apps.   
-*Managed identities for Azure resources*: Provide your Azure services with an automatically managed identity in Azure Entra ID that can authenticate any Azure Entra ID-supported authentication service, including Key Vault.
+**Application Management**:  It Manages your cloud and on-premises apps using services like Application Proxy, the My Apps portal, single sign-on, and Software as a Service (SaaS) apps.  
+**Authentication**: Users can manage Azure Entra ID self-service password reset feature, Multi-Factor Authentication, custom banned password list, and smart lockout.  
+**Azure Active Directory for developers**: It builds apps that can sign in all the Microsoft identities, and fetch tokens to call Microsoft Graph, and other Microsoft or custom APIs.  
+**Business-to-Business**: You can manage your guest users and external partners while also maintaining control over your own corporate data at the same time.
+**Business-to-Customer (B2C)**: With Azure Entra ID users can customize and control how others sign up, sign in, and manage their profiles when using their apps.   
+**Managed identities for Azure resources**: Provide your Azure services with an automatically managed identity in Azure Entra ID that can authenticate any Azure Entra ID-supported authentication service, including Key Vault.
 Reports and monitoring: Users can gain insights into the security and usage patterns in their working environment.   
-*Privileged identity management (PIM)*:  This feature includes access to resources in Azure Entra ID and Azure, including some other Microsoft Online Services, like Microsoft 365 or Intune. Users can manage, control, and monitor access within their organization.   
-*Identity protection*: Detect potential vulnerabilities affecting your organization’s identities, configure policies to respond to suspicious actions, and accordingly take appropriate steps to resolve them.  
+**Privileged identity management (PIM)**:  This feature includes access to resources in Azure Entra ID and Azure, including some other Microsoft Online Services, like Microsoft 365 or Intune. Users can manage, control, and monitor access within their organization.   
+**Identity protection**: Detect potential vulnerabilities affecting your organization’s identities, configure policies to respond to suspicious actions, and accordingly take appropriate steps to resolve them.  
 Identity governance: Manage your organization’s identity through employee, business partner, vendor, service, and app access controls.  
-*Enterprise users*: Manage license assignments, app access, and setting up delegates using groups and administrator roles.  
+**Enterprise users**: Manage license assignments, app access, and setting up delegates using groups and administrator roles.  
 
 ## Azure Entra ID Connect
 

@@ -137,9 +137,10 @@ There are various features of Azure AD Connect:
 
 
 ## Azure AD Join:
-	* Azure AD join is used to connect devices directly to Azure Entra ID and we need not join to the on-premises AD.  
-	* Azure AD joined devices are signed in for using an organizational Azure Entra ID Account. 
-	* Devices that are Azure AD joined can still authenticate to on-premises servers like file, print, and other applications. 
+   * Azure AD join is used to connect devices directly to Azure Entra ID and we need not join to the on-premises AD.  
+   * Azure AD joined devices are signed in for using an organizational Azure Entra ID Account. 
+   * Devices that are Azure AD joined can still authenticate to on-premises servers like file, print, and other applications. 
+
 
 <img src="./images/azure-ad-join.png" width=70% height=70%/>
 

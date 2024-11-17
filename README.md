@@ -93,7 +93,7 @@ Active Directory (AD): Active Directory is a database and a set of services conn
 * Every day, Azure AD manages over 1.2 billion identities, according to Microsoft.   
 * *Tenant*  
 	* Represents an organization.   
-	* Tenant is automatically created when your organization signs up for a Microsoft cloud service subscription.   
+	* **Tenant** is automatically created when your organization signs up for a Microsoft cloud service subscription.   
 	* The term Tenant means a single instance of Azure AD representing a single organization.   
 	* The terms Tenant and Directory are often used interchangeably.  
 
@@ -102,9 +102,9 @@ Active Directory (AD): Active Directory is a database and a set of services conn
 
 If we have a traditional on-premise setup with AD and want to integrate it with Azure Entra ID so that we can manage access to the Cloud application, we can do it easily by using AD Connect.   
 
-Azure Entra ID works on a licensing model. You can access Azure Entra ID with these two licenses:  
+Azure Entra ID works on a licensing model. You can access Azure Entra ID with these two licenses:    
 	* Microsoft Online Services. 
-	* Azure Entra ID Premium Licenses. 
+    * * Azure Entra ID Premium Licenses.  
 
 ### Features of Azure Entra ID
 **Application Management**:  It Manages your cloud and on-premises apps using services like Application Proxy, the My Apps portal, single sign-on, and Software as a Service (SaaS) apps.  
@@ -143,6 +143,103 @@ There are various features of Azure AD Connect:
 
 
 <img src="./images/azure-ad-join.png" width=70% height=70%/>
+
+### Create users in bulk in Microsoft Entra ID.    
+Sign in to the Microsoft Entra admin center as at least a User Administrator.   
+
+1. Select Microsoft Entra ID.    
+
+2. Select **All users** > **Users** > **Bulk create.**    
+
+3. On the **Bulk create user page**, select **Download** to receive a valid comma-separated values (CSV) file of user properties, and then add users you want to create. 
+
+<img src="./images/Bulk_create.png" width=70% height=70%/>
+
+4. Open the CSV file and add a line for each user you want to create. The only required values are Name, User principal name, Initial password and Block sign in (Yes/No). Then save the file.  
+
+5. On the Bulk create user page, under Upload your CSV file, browse to the file. When you select the file and click Submit, validation of the CSV file starts.  
+
+<img src="./images/bulk_create2.png" width=70% height=70%/>
+
+6. After the file contents are validated, you’ll see File uploaded successfully. If there are errors, you must fix them before you can submit the job.  
+
+7. When your file passes validation, select Submit to start the bulk operation that imports the new users.  
+
+8. When the import operation completes, you'll see a notification of the bulk operation job status.  
+
+<img src="./images/bulk_create3.png" width=70% height=70%/>
+
+### Create Group
+
+1. Sign in to the Microsoft Entra admin center as at least a Groups Administrator.  
+2. Browse to **Identity** > **Groups** > **All groups**.  
+3. Select **New group**.  
+
+<img src="./images/ad_group.png" width=70% height=70%/>
+
+
+### Create Dynamic Group.
+
+
+1. Sign in to the **Microsoft Entra admin** center as at least a **Groups Administrator**.  
+
+2. Select Microsoft Entra ID.> **Groups**.  
+
+3. Select **All groups**, and select **New group**.  
+
+<img src="./images/dynamic_group.png" width=70% height=70%/>
+
+4. On the Group page, enter a name and description for the new group. Select a Membership type for either users or devices, and then select Add dynamic query. The rule builder supports up to five expressions. To add more than five expressions, you must use the text box.  
+
+<img src="./images/dynamic_group2.png" width=70% height=70%/>
+
+
+5. To see the custom extension properties available for your membership query:
+
+	a. Select Get custom extension properties. 
+	b. Enter the application ID, and then select Refresh properties.  
+
+6. After creating the rule, select Save.  
+
+7. Select Create on the New group page to create the group.  
+
+
+### Azure Entra ID Vs Azure RBAC. 
+
+<img src="./images/rbac_vs_ad.png" width=50% height=50%/>  
+
+Assign Role to Entra ID User.  
+
+<img src="./images/assign_ad_role_to_user.png" width=50% height=50%/>
+
+
+Assign Azure role to User.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## AZURE VIRTUAL NETWORK
+   * Your own isolated network in Azure.
+	* Region can have multiple VNets but each VNet belong to same Region
+	* Within a VNet, network traffic is isolated (not visible) from network traffic in all other Azure VNet.
+	* You maintain complete control over all traffic entering and leaving a VNet.
+	* IP Address is a address of resource which ensures the traffic gets to the right server on the internet
+	* Every resource gets its own unique IP Address on that Vnet within the address space.
+	* Scaling - You can add more VNets or more addresses on existing VNet.
+
+<img src="./images/vnet.png" width=50% height=50%/> 
 
 
 

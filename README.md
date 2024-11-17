@@ -219,33 +219,33 @@ Assign Azure role to User.
 
 ## AZURE VIRTUAL NETWORK
    * Your own isolated network in Azure.  
-	* Region can have multiple VNets but each VNet belong to same Region.  
-	* Within a VNet, network traffic is isolated (not visible) from network traffic in all other Azure VNet.  
-	* You maintain complete control over all traffic entering and leaving a VNet.  
-	* IP Address is a address of resource which ensures the traffic gets to the right server on the internet.  
-	* Every resource gets its own unique IP Address on that Vnet within the address space.  
-	* Scaling - You can add more VNets or more addresses on existing VNet.  
+   * Region can have multiple VNets but each VNet belong to same Region.
+   * Within a VNet, network traffic is isolated (not visible) from network traffic in all other Azure VNet.  
+   * You maintain complete control over all traffic entering and leaving a VNet.  
+   * IP Address is a address of resource which ensures the traffic gets to the right server on the internet.  
+   * Every resource gets its own unique IP Address on that Vnet within the address space.  
+   * Scaling - You can add more VNets or more addresses on existing VNet.  
 
 <img src="./images/vnet.png" width=50% height=50%/> 
 
 
 ## SUBNET
 
-Organize and group resources on subnets.  
-Separate public and private resources into distinct subnets.  
-Resources in a public subnet CAN be accessed from internet.  
-Resources in a private subnet CANNOT be accessed from internet, but resources in a public subnet can connect with resources in a private subnet.  
-We can use network security groups to secure individual subnets.   
+   * Organize and group resources on subnets.  
+   * Separate public and private resources into distinct subnets.  
+   * Resources in a public subnet CAN be accessed from internet.  
+   * Resources in a private subnet CANNOT be accessed from internet, but resources in a public subnet can connect with resources in a private subnet.
+   * We can use network security groups to secure individual subnets.   
 
 
 ## VNet Peering
 
 
-Connect VNets from same or different regions (Global VNet peering).  
-Allows for secure communication between VNets that are linked.  
-Low Latency: Resources between diff VNets are connected using high bandwidth connections.  
-Assemble them as though they were members of the same network.  
-Must not have CIDRs that overlap (IP address range).  
+   * Connect VNets from same or different regions (Global VNet peering).  
+   * Allows for secure communication between VNets that are linked.  
+   * Low Latency: Resources between diff VNets are connected using high bandwidth connections.  
+   * Assemble them as though they were members of the same network.  
+   * Must not have CIDRs that overlap (IP address range).  
 
 <img src="./images/vnet_peering.png" width=50% height=50%/> 
 

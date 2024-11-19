@@ -35,7 +35,7 @@ For example imilar usage, type, or location
 Azure Resource Manager is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure account.   
 When you send a request through any of the Azure APIs, tools, or SDKs, Resource Manager receives the request. It authenticates and authorizes the request before forwarding it to the appropriate Azure service.      
 
-<img src="./images/arm.png" width=60% height=60%/> 
+<img src="./images/arm.png" width=75% height=75%/> 
 
 * Atomate resource deployments (create, update, and delete) using templates.   
 * ARM template is a JSON file that defines what you want to deploy to Azure.   
@@ -44,7 +44,7 @@ When you send a request through any of the Azure APIs, tools, or SDKs, Resource 
 * ARM template can be used to deploy the resources consistently and repeatedly.  
 * Define the dependencies between resources so they're deployed in the correct order.   
 
-<img src="./images/rg_template.png" width=60% height=60%/>
+<img src="./images/rg_template.png" width=75% height=75%/>
 
 
 ## Subscriptions
@@ -247,7 +247,7 @@ Assign Azure role to User.
    * Assemble them as though they were members of the same network.  
    * Must not have CIDRs that overlap (IP address range).  
 
-<img src="./images/vnet_peering.png" width=60% height=60%/> 
+<img src="./images/vnet_peering.png" width=75% height=75%/> 
 
 
 ## System routes  
@@ -260,7 +260,7 @@ Azure automatically creates system routes and assigns the routes to each subnet 
    * Routing tables are associated to subnets.  
    * A route table contains a set of rules, called routes, that specifies how packets should be routed in a virtual network. 
 
-<img src="./images/system_route.png" width=60% height=60%/> 
+<img src="./images/system_route.png" width=75% height=75%/> 
 
 ## User-defined Route  
 To customize your traffic routes, you shouldn't modify the default routes but you should create custom, or user-defined(static) routes which override Azure's default system routes. In Azure, you create a route table, then associate the route table to zero or more virtual network subnets. Each subnet can have zero or one route table associated to it.
@@ -279,19 +279,19 @@ Gateway: Connects the virtual network and the routers in the on-premises network
    * Network security groups: Restricts network traffic within the virtual network.  
    * Azure Bastion: Allows users to log into virtual machines (VMs) in the virtual network through SSH or remote desktop protocol (RDP).  
 
-<img src="./images/dmz.png" width=60% height=60%/> 
+<img src="./images/dmz.png" width=75% height=75%/> 
 
 
 In above figure we will create user-defined route to forward traffic public subnet to dmz subnet and then reach to private subnet. Direct public to private forwarding will be restrict.
 
 Create User defined route table for public sunet and add route to forward traffic to DMZ instance.  
-<img src="./images/dmz_route.png" width=60% height=60%/> 
+<img src="./images/dmz_route.png" width=75% height=75%/> 
 
 
 Now route traffic from dmz to private. So that public subnet can reach to private subnet via vmz.  
  1. Enable Forwarding at IP configuration.  
 
- <img src="./images/dmz_forwarding.png" width=60% height=60%/> 
+ <img src="./images/dmz_forwarding.png" width=75% height=75%/> 
   
  2. Enable forwarding at system Level.  
 
@@ -303,19 +303,39 @@ Now route traffic from dmz to private. So that public subnet can reach to privat
    * You can access Azure service to only your virtual networks.  
    * Service Endpoints enables private IP addresses in the VNet to reach the endpoint of an Azure service without needing a public IP address on the VNet.  
 
-<img src="./images/service_endpoint.png" width=60% height=60%/> 
+<img src="./images/service_endpoint.png" width=75% height=75%/> 
 
 Example: Access storage account from Vm within Vnet.  
 1. Create Service account in Vnet.  
 
-<img src="./images/service_endpoint_create.png" width=60% height=60%/> 
+<img src="./images/service_endpoint_create.png" width=75% height=75%/> 
  
 
 2. Allow access only from specific Vnet in Storage account.  
 
-<img src="./images/storage_account_allow.png" width=60% height=60%/> 
+<img src="./images/storage_account_allow.png" width=75% height=75%/> 
 
-In Above example the storage account will be accessible from mentioned Vnet.  
+In Above example the storage account will be accessible only from mentioned Vnet.  
+
+## Private Endpoint
+
+   * A private endpoint is a network interface that uses a private IP address from your virtual network.  
+   * This network interface connects you privately and securely to a service that's powered by Azure Private Link.  
+
+<img src="./images/private_endpoint.png" width=75% height=75%/>
+
+
+## Vnet Peering
+
+   * Virtual networks are isolated with each other and have strong communication boundary.
+   * Azure network peering can connect two virtual networks located in the same region or across regions.
+
+   * Regional VNet peering connects Azure virtual networks in the same region.  
+   * Global VNet peering connects Azure virtual networks in different regions.  
+   * The virtual networks can't have overlapping IP addresses.    
+   * After peering, VMs across diff VNets can communicate using private IPs.  
+
+<img src="./images/vnet_peeringg.png" width=75% height=75%/>
 
 
 

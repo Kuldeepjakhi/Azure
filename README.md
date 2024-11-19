@@ -247,6 +247,75 @@ Assign Azure role to User.
    * Assemble them as though they were members of the same network.  
    * Must not have CIDRs that overlap (IP address range).  
 
-<img src="./images/vnet_peering.png" width=50% height=50%/> 
+<img src="./images/vnet_peering.png" width=60% height=60%/> 
+
+
+## System routes  
+Azure automatically creates system routes and assigns the routes to each subnet in a virtual network. You can't create system routes, nor can you remove system routes, but you can override some system routes with custom routes.  
+
+   * Routing: Process of finding/selecting a path for a traffic in one or across multiple networks.  
+   * Azure routing is setup by default.  
+   * Azure uses system routes to direct network traffic between virtual machines, on-premises networks, and the Internet.  
+   * Information about the system routes is recorded in a route table.  
+   * Routing tables are associated to subnets.  
+   * A route table contains a set of rules, called routes, that specifies how packets should be routed in a virtual network. 
+
+<img src="./images/system_route.png" width=60% height=60%/> 
+
+## User-defined Route  
+To customize your traffic routes, you shouldn't modify the default routes but you should create custom, or user-defined(static) routes which override Azure's default system routes. In Azure, you create a route table, then associate the route table to zero or more virtual network subnets. Each subnet can have zero or one route table associated to it.
+
+   * Network Virtual appliance (NVA) - this is simply a specified optimized virtual machine for certain tasks.  
+   * UDRs designed to override Azure default routing or add new routes.  
+   * Managed via Azure Route Table resource.  
+   * UDRs control network traffic by defining routes that specify the next hop (destination) of the traffic flow.  
+   * The hop can be a virtual network gateway, virtual network, internet, or virtual appliance.  
+
+## DMZ Network  
+A DMZ, or perimeter network, in Azure is a reference architecture that connects an on-premises network to Azure. It provides secure connectivity between the internet, cloud networks, and on-premises networks. 
+Here are some components of an Azure DMZ:
+Gateway: Connects the virtual network and the routers in the on-premises network
+   * Azure Firewall: A managed firewall as a service.  
+   * Network security groups: Restricts network traffic within the virtual network.  
+   * Azure Bastion: Allows users to log into virtual machines (VMs) in the virtual network through SSH or remote desktop protocol (RDP).  
+
+<img src="./images/dmz.png" width=60% height=60%/> 
+
+
+In above figure we will create user-defined route to forward traffic public subnet to dmz subnet and then reach to private subnet. Direct public to private forwarding will be restrict.
+
+Create User defined route table for public sunet and add route to forward traffic to DMZ instance.  
+<img src="./images/dmz_route.png" width=60% height=60%/> 
+
+
+Now route traffic from dmz to private. So that public subnet can reach to private subnet via vmz.  
+ 1. Enable Forwarding at IP configuration.  
+
+ <img src="./images/dmz_forwarding.png" width=60% height=60%/> 
+  
+ 2. Enable forwarding at system Level.  
+
+
+## Service Endpoint
+
+   * Provides secure and direct connectivity to Azure services.  
+   * Use optimized route over the Azure backbone network.  
+   * You can access Azure service to only your virtual networks.  
+   * Service Endpoints enables private IP addresses in the VNet to reach the endpoint of an Azure service without needing a public IP address on the VNet.  
+
+<img src="./images/service_endpoint.png" width=60% height=60%/> 
+
+Example: Access storage account from Vm within Vnet.  
+1. Create Service account in Vnet.  
+
+<img src="./images/service_endpoint_create.png" width=60% height=60%/> 
+ 
+
+2. Allow access only from specific Vnet in Storage account.  
+
+<img src="./images/storage_account_allow.png" width=60% height=60%/> 
+
+In Above example the storage account will be accessible from mentioned Vnet.  
+
 
 
